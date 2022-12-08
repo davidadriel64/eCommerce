@@ -1,53 +1,60 @@
-import React from 'react';
+import  React, { useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
+import arrayProductos from './json/Productos.json';
+import ItemList from './ItemList';
+import Loader from './Loader';
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
+  const [productos, setProductos] = useState([]);	
+  const [loading, setLoading] = useState(true);
+  const {id} = useParams();
+
+  useEffect(() => {
+    if (id) {
+      document.getElementById("ocultar").style.display = "none";
+      document.getElementById("mostrar").style.display = "block";
+    } else {
+      document.getElementById("ocultar").style.display = "block";
+      document.getElementById("mostrar").style.display = "none";
+    }
+    const promesa = new Promise((resolve,reject) => {
+      setTimeout(() => {
+        setLoading(false);
+        resolve( id ? arrayProductos.filter((producto) => producto.categoria === id): arrayProductos);
+      }, 2000);
+    });
+    promesa.then((resultado) => {
+      setProductos(resultado);
+    });
+
+
+  }, [id]);
+
   return (
+    <div>
+        <div id="ocultar" className="bg-dark text-secondary px-4 py-5 text-center">
+        <div className="py-5">
+          <h1 className="display-5 fw-bold text-white">Bienvenidos a TIENDA YA!</h1>
+          <div className="col-lg-6 mx-auto">
+            <p className="fs-5 mb-4">Todo lo que queres a un click de distancia</p>
+            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="mostrar" className="bg-dark text-secondary px-4 py-5 text-center">
+        <div className="py-3">
+          <h1 className="display-5 fw-bold text-white">Productos de la categoria {id}</h1>
+          <div className="col-lg-6 mx-auto">
+          </div>
+        </div>
+      </div>
     <div className="container">
-    <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
-      <h1 className="display-4 fw-normal">{greeting}</h1>
-      <p className="fs-5 text-muted"> :O </p>
-    </div>
-    <div className="row">
-      <div className="col-3">
-        <div className="card" >
-        <div className="card-body">
-            <h5 className="card-title">Categoria 1</h5>
-            <h6 className="card-subtitle mb-2 text-muted">Categoria 1</h6>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" className="card-link">ver categoria</a>
-        </div>
-        </div>
-    </div>
-    <div className="col-3">
-        <div className="card" >
-        <div className="card-body">
-            <h5 className="card-title">Categoria 2</h5>
-            <h6 className="card-subtitle mb-2 text-muted">Categoria 2</h6>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" className="card-link">ver categoria</a>
-        </div>
-        </div>
-    </div>
-    <div className="col-3">
-        <div className="card" >
-        <div className="card-body">
-            <h5 className="card-title">Categoria 3</h5>
-            <h6 className="card-subtitle mb-2 text-muted">Categoria 3</h6>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" className="card-link">ver categoria</a>
-        </div>
-        </div>
-    </div>
-    <div className="col-3">
-        <div className="card" >
-        <div className="card-body">
-            <h5 className="card-title">Categoria 4</h5>
-            <h6 className="card-subtitle mb-2 text-muted">Categoria 4</h6>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" className="card-link">ver categoria</a>
-        </div>
-        </div>
-    </div>
+    <div className="mt-3">
+    {
+      loading ? <Loader /> : <ItemList productos={productos} />
+    }
+      </div>
     </div>
     </div>
   );

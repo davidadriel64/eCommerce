@@ -1,0 +1,12 @@
+[
+{"id":1, "imagen": "https://http2.mlstatic.com/D_Q_NP_949135-MLA52402086043_112022-W.webp", "nombre": "Ventilador Bestron", "precio": "12.000", "stock": 10, "categoria": "ventiladores","info": "Ventilador 3en1 Bestron Ven-fh1209 3 Palas 80w 1,70mts Cuota"},
+{"id":2, "imagen": "https://http2.mlstatic.com/D_Q_NP_747979-MLA52368909752_112022-W.webp", "nombre": "Ventilador Moulinex", "precio": "14.000", "stock": 10, "categoria": "ventiladores", "info": "Ventilador De Pie 18  Moulinex 6 Aspas Ve4080b1 220v"},
+{"id":3, "imagen": "https://http2.mlstatic.com/D_Q_NP_984452-MLA44098254984_112020-W.webp", "nombre": "Ventilador Peabody", "precio": "13.000", "stock": 10, "categoria": "ventiladores", "info": "Ventilador de pie Peabody PE-VP2060 negro con 3 palas de  plástico"},
+{"id":4, "imagen": "https://http2.mlstatic.com/D_Q_NP_657708-MLA52430612382_112022-W.webp", "nombre": "Moto G42", "precio": "58.000", "stock": 10, "categoria": "celulares", "info": "Moto G42 128 GB  verde atlántico 4 GB RAM"},
+{"id":5, "imagen": "https://http2.mlstatic.com/D_Q_NP_661767-MLA49535290322_032022-W.webp", "nombre": "Moto G41", "precio": "46.000", "stock": 10, "categoria": "celulares", "info": " Moto G41 128 GB  dorado amanecer 4 GB RAM"},
+{"id":6, "imagen": "https://http2.mlstatic.com/D_Q_NP_709477-MLA50912283543_072022-W.webp", "nombre": "Galaxy A23", "precio": "70.000", "stock": 10, "categoria": "celulares", "info": "Samsung Galaxy A23 128 Gb Black 4 Gb Ram"},
+{"id":7, "imagen": "https://http2.mlstatic.com/D_Q_NP_745854-MLA48622828334_122021-W.webp", "nombre": "Smart TV Philips", "precio": "108.000", "stock": 10, "categoria": "televisores", "info": "Smart TV Philips 7000 Series 50PUD7406/77 LED 4K 50 110V/240V"},
+{"id":8, "imagen": "https://http2.mlstatic.com/D_Q_NP_787221-MLA48007684849_102021-W.webp", "nombre": "Smart TV Samsung", "precio": "118.000", "stock": 10, "categoria": "televisores", "info": " Smart TV Samsung Series 7 UN50AU7000GCZB LED 4K 50 220V - 240V"},
+{"id":9, "imagen": "https://http2.mlstatic.com/D_Q_NP_944170-MLA50821605362_072022-W.webp", "nombre": "Smart TV Philips 43", "precio": "83.000", "stock": 10, "categoria": "televisores", "info": "Smart TV Philips 6900 Series 43PFD6917/77 LED Full HD 43 110V/240V"}
+
+]
